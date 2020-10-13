@@ -12,7 +12,7 @@ module RubyLepton
           output = File.open(generated_file, 'rb')
           if options[:binary].to_s == "true"
             File.delete(generated_file)
-            puts output.read
+            return output.read
           else
             puts "Compressed file saved to: " + generated_file
           end
@@ -28,7 +28,7 @@ module RubyLepton
           output = File.open(generated_file, 'rb')
           if options[:binary].to_s == "true"
             File.delete(generated_file)
-            puts output.read
+            return output.read
           else
             puts "Decompressed file saved to: " + generated_file
           end
