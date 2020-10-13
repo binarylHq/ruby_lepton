@@ -49,6 +49,7 @@ module RubyLepton
     def install
       puts "Creating output directory" if options.verbose?
       empty_directory("output")
+      inject_into_file ".gitignore", "/output/\n"
     end
   end
 end
