@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+
+require "ruby_lepton"
+require 'thor'
+
+module RubyLepton
+  class CLI < Thor
+    check_unknown_options!
+    class_option 'verbose',  :type => :boolean, :default => false
+
+    def self.exit_on_failure?
+      true
+    end
+
+    desc 'version', 'Display Lepton version'
+    map %w[-v --version] => :version
+    def version
+      say "RubyLepton #{VERSION}"
+    end
+
+    desc "compress [path]", "compress method"
+    method_options %w( binary -b ) => :boolean
+    def compress(path)
+      say "Setting the options" if options.verbose?
+      opts = {
+        binary: options.binary?
+      }
+      say "Compression begins" if options.verbose?
+      RubyLepton::Base.compress(path, opts)
+    end
+
+    desc "decompress [path]", "decompress method"
+    method_options %w( binary -b ) => :boolean
+    def decompress(path)
+      say "Setting the options" if options.verbose?
+      opts = {
+        binary: options.binary?
+      }
+      say "Decompression begins" if options.verbose?
+      RubyLepton::Base.decompress(path, opts)
+    end
+
+    desc "Install", "Install lepton"
+    def install
+      puts "Installing lepton" if options.verbose?
+    end
+  end
+end
+
+
+RubyLepton::CLI.start(ARGV)
