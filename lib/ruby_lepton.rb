@@ -5,7 +5,7 @@ module RubyLepton
   class Error < StandardError; end
   class Base
     class << self
-      def compress(source_file, options)
+      def compress(source_file, options={})
         generated_file = "output/"+SecureRandom.hex(4)+".lep"
         `lepton -memory=1024M -threadmemory=128M #{source_file} #{generated_file}`
         if File.exist? generated_file
@@ -21,7 +21,7 @@ module RubyLepton
         end
       end
 
-      def decompress(source_file, options)
+      def decompress(source_file, options={})
         generated_file = "output/"+SecureRandom.hex(4)+".jpeg"
         `lepton -memory=1024M -threadmemory=128M #{source_file} #{generated_file}`
         if File.exist? generated_file

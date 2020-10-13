@@ -5,8 +5,13 @@ require 'thor'
 
 module RubyLepton
   class CLI < Thor
+    include Thor::Actions
     check_unknown_options!
     class_option 'verbose',  :type => :boolean, :default => false
+
+    def self.source_root
+      File.dirname(__FILE__)
+    end
 
     def self.exit_on_failure?
       true
@@ -40,9 +45,10 @@ module RubyLepton
       RubyLepton::Base.decompress(path, opts)
     end
 
-    desc "Install", "Install lepton"
+    desc "Install", "Install ruby lepton"
     def install
-      puts "Installing lepton" if options.verbose?
+      puts "Creating output directory" if options.verbose?
+      empty_directory("output")
     end
   end
 end

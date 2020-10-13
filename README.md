@@ -1,4 +1,5 @@
 
+
 # Ruby Lepton
 
 A Ruby wrapper library for Dropbox JPEG Lepton compression tool.
@@ -28,38 +29,52 @@ or include inside Gemfile
 ```
 gem "ruby_lepton"
 ```
-Generate binstubs:
+Install ruby lepton:
+
+    $ bundle exec ruby_lepton install
+
+## Usage
+
+Compress method
+```
+RubyLepton::Base.compress(path_to_source_file, options)
+```
+Decompress method
+```
+RubyLepton::Base.decompress(path_to_source_file, options)
+```
+`options` can be passed as hash `{binary: true}`
+
+Supported options:
+`binary`
+
+## Usage CLI
+
+Generate binstubs for CLI commands:
 
 `bundle binstubs ruby_lepton`
 
 `ruby_lepton` executable will be generated  under `bin/` folder
 
-Install ruby lepton:
-
-    bundle exec ruby_lepton install
-
-
-
-## Usage
 
 To compress a file:
 ```
-bundle exec ruby_lepton compress [PATH] [OPTIONS]
+$ bundle exec ruby_lepton compress [PATH] [OPTIONS]
 ```
 To decompress a file:
 ```
-bundle exec ruby_lepton decompress [PATH] [OPTIONS]
+$ bundle exec ruby_lepton decompress [PATH] [OPTIONS]
 ```
 
 #### Options
 ```
-bundle exec ruby_lepton compress path_to_file --verbose --binary
-bundle exec ruby_lepton decompress path_to_file --no-verbose --no-binary
+$ bundle exec ruby_lepton compress path_to_file --verbose --binary
+$ bundle exec ruby_lepton decompress path_to_file --no-verbose --no-binary
 ```
 or you can pass alias for binary
 ```
-bundle exec ruby_lepton compress path_to_file -b
-bundle exec ruby_lepton decompress path_to_file -b
+$ bundle exec ruby_lepton compress path_to_file -b
+$ bundle exec ruby_lepton decompress path_to_file -b
 ```
 ## Output
 
@@ -69,7 +84,7 @@ By default, file is generated for compression and decompression under `output/` 
 #### Binary data
 Binary data will be returned instead of file by passing `--binary` option
 ```
-bundle exec ruby_lepton compress path_to_file --binary
+$ bundle exec ruby_lepton compress path_to_file --binary
 ```
 
 File is not generated when `--binary` option is passed
