@@ -1,4 +1,5 @@
 
+
 # Ruby Lepton
 [![Gem Version](https://badge.fury.io/rb/ruby_lepton.svg)](https://badge.fury.io/rb/ruby_lepton)
 
@@ -10,23 +11,23 @@ Install Dropbox Lepton
 
 On macOS with Homebrew:
  ```
- brew install lepton
+$ brew install lepton
  ```
 On linux:
 ```
-sudo apt update
-sudo apt install lepton
+$ sudo apt update
+$ sudo apt install lepton
 ```
 **This guide assumes you have Dropbox Lepton installed.**
 
 ## Installation
 
 ```ruby
-gem install ruby_lepton
+$ gem install ruby_lepton
 ```
 or include inside Gemfile
 ```ruby
-gem "ruby_lepton"
+$ gem "ruby_lepton"
 ```
 Install ruby lepton:
 
@@ -55,7 +56,7 @@ Supported options:
 
 Generate binstubs for CLI commands:
 
-`bundle binstubs ruby_lepton`
+`$ bundle binstubs ruby_lepton`
 
 `ruby_lepton` executable will be generated  under `bin/` folder
 
