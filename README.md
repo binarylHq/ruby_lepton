@@ -1,5 +1,7 @@
 # Ruby Lepton
 [![Gem Version](https://badge.fury.io/rb/ruby_lepton.svg)](https://badge.fury.io/rb/ruby_lepton)
+
+## Description
 A Ruby wrapper library for Dropbox JPEG Lepton compression tool.
 
 ## Getting started
