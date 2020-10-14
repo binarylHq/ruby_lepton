@@ -20,11 +20,11 @@ sudo apt install lepton
 
 ## Installation
 
-```
+```ruby
 gem install ruby_lepton
 ```
 or include inside Gemfile
-```
+```ruby
 gem "ruby_lepton"
 ```
 Install ruby lepton:
@@ -34,11 +34,11 @@ Install ruby lepton:
 ## Usage
 
 Compress method
-```
+```ruby
 RubyLepton::Base.compress(path_to_source_file, options)
 ```
 Decompress method
-```
+```ruby
 RubyLepton::Base.decompress(path_to_source_file, options)
 ```
 `options` can be passed as hash `{binary: true}`
