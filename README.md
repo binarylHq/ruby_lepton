@@ -34,14 +34,18 @@ Install ruby lepton:
 
 ## Usage
 
-Compress method
+**Compress method**
 ```ruby
 RubyLepton::Base.compress(path_to_source_file, options)
 ```
-Decompress method
+returns output file path: `"output/filename.lep"`
+
+**Decompress method**
 ```ruby
 RubyLepton::Base.decompress(path_to_source_file, options)
 ```
+returns output file path: `"output/filename.jpeg"`
+
 `options` can be passed as hash `{binary: true}`
 
 Supported options:
@@ -56,16 +60,18 @@ Generate binstubs for CLI commands:
 `ruby_lepton` executable will be generated  under `bin/` folder
 
 
-To compress a file:
+**Compress a image:**
 ```
 $ bundle exec ruby_lepton compress [PATH] [OPTIONS]
 ```
-To decompress a file:
+**Decompress a file:**
 ```
 $ bundle exec ruby_lepton decompress [PATH] [OPTIONS]
 ```
 
-#### Options
+File is generated after compression and decompression under `output/` folder
+
+**Options**
 ```
 $ bundle exec ruby_lepton compress path_to_file --verbose
 $ bundle exec ruby_lepton decompress path_to_file --no-verbose

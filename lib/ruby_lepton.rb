@@ -15,6 +15,7 @@ module RubyLepton
             return output.read
           else
             puts "Compressed file saved to: " + generated_file
+            return generated_file
           end
         else
           puts "Error in compression"
@@ -31,6 +32,7 @@ module RubyLepton
             return output.read
           else
             puts "Decompressed file saved to: " + generated_file
+            return generated_file
           end
         else
           puts "Error in decompression"
