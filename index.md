@@ -1,3 +1,4 @@
+
 # Ruby Lepton
 [![Gem Version](https://badge.fury.io/rb/ruby_lepton.svg)](https://badge.fury.io/rb/ruby_lepton)
 
@@ -66,23 +67,21 @@ $ bundle exec ruby_lepton decompress [PATH] [OPTIONS]
 
 #### Options
 ```
-$ bundle exec ruby_lepton compress path_to_file --verbose --binary
-$ bundle exec ruby_lepton decompress path_to_file --no-verbose --no-binary
-```
-or you can pass alias for binary
-```
-$ bundle exec ruby_lepton compress path_to_file -b
-$ bundle exec ruby_lepton decompress path_to_file -b
+$ bundle exec ruby_lepton compress path_to_file --verbose
+$ bundle exec ruby_lepton decompress path_to_file --no-verbose
 ```
 ## Output
 
 #### File generation
 By default, file is generated after compression and decompression under `output/` folder
+```ruby
+RubyLepton::Base.decompress(path_to_source_file)
+```
 
 #### Binary data
-Binary data will be returned instead of file by passing `--binary` option
-```
-$ bundle exec ruby_lepton compress path_to_file --binary
+Binary data will be returned instead of file by passing `{binary: true}` option
+```ruby
+RubyLepton::Base.decompress(path_to_source_file, {binary: true})
 ```
 
 File is not generated when `--binary` option is passed
