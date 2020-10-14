@@ -1,4 +1,5 @@
 
+
 # Ruby Lepton
 [![Gem Version](https://badge.fury.io/rb/ruby_lepton.svg)](https://badge.fury.io/rb/ruby_lepton)
 
@@ -10,23 +11,23 @@ Install Dropbox Lepton
 
 On macOS with Homebrew:
  ```
- brew install lepton
+$ brew install lepton
  ```
 On linux:
 ```
-sudo apt update
-sudo apt install lepton
+$ sudo apt update
+$ sudo apt install lepton
 ```
 **This guide assumes you have Dropbox Lepton installed.**
 
 ## Installation
 
 ```ruby
-gem install ruby_lepton
+$ gem install ruby_lepton
 ```
 or include inside Gemfile
 ```ruby
-gem "ruby_lepton"
+$ gem "ruby_lepton"
 ```
 Install ruby lepton:
 
@@ -34,14 +35,18 @@ Install ruby lepton:
 
 ## Usage
 
-Compress method
+**Compress method**
 ```ruby
 RubyLepton::Base.compress(path_to_source_file, options)
 ```
-Decompress method
+returns output file path: `"output/filename.lep"`
+
+**Decompress method**
 ```ruby
 RubyLepton::Base.decompress(path_to_source_file, options)
 ```
+returns output file path: `"output/filename.jpeg"`
+
 `options` can be passed as hash `{binary: true}`
 
 Supported options:
@@ -51,21 +56,23 @@ Supported options:
 
 Generate binstubs for CLI commands:
 
-`bundle binstubs ruby_lepton`
+`$ bundle binstubs ruby_lepton`
 
 `ruby_lepton` executable will be generated  under `bin/` folder
 
 
-To compress a file:
+**Compress a image:**
 ```
 $ bundle exec ruby_lepton compress [PATH] [OPTIONS]
 ```
-To decompress a file:
+**Decompress a file:**
 ```
 $ bundle exec ruby_lepton decompress [PATH] [OPTIONS]
 ```
 
-#### Options
+File is generated after compression and decompression under `output/` folder
+
+**Options**
 ```
 $ bundle exec ruby_lepton compress path_to_file --verbose
 $ bundle exec ruby_lepton decompress path_to_file --no-verbose
