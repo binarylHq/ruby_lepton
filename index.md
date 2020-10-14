@@ -22,12 +22,12 @@ $ sudo apt install lepton
 
 ## Installation
 
-```ruby
+```
 $ gem install ruby_lepton
 ```
 or include inside Gemfile
 ```ruby
-$ gem "ruby_lepton"
+gem "ruby_lepton"
 ```
 Install ruby lepton:
 
