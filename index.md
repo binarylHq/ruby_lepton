@@ -77,7 +77,7 @@ $ bundle exec ruby_lepton decompress path_to_file -b
 ## Output
 
 #### File generation
-By default, file is generated for compression and decompression under `output/` folder
+By default, file is generated after compression and decompression under `output/` folder
 
 #### Binary data
 Binary data will be returned instead of file by passing `--binary` option
