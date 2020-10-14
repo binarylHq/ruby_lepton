@@ -20,8 +20,6 @@ sudo apt install lepton
 
 ## Installation
 
-Clone the repo:
-
 ```
 gem install ruby_lepton
 ```
